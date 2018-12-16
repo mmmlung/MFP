@@ -1,3 +1,6 @@
 [1208/201755.468:ERROR:prune_crash_reports.cc(34)] PruneCrashReportDatabase: Failed to get pending reports
 [1208/203517.850:ERROR:prune_crash_reports.cc(34)] PruneCrashReportDatabase: Failed to get pending reports
 [1210/205148.822:ERROR:prune_crash_reports.cc(34)] PruneCrashReportDatabase: Failed to get pending reports
+[1216/180120.417:ERROR:file_io_win.cc(161)] CreateFile C:\Users\ADM-ML~1\AppData\Local\Temp\scoped_dir13928_30318\Crashpad\settings.dat: Das System kann den angegebenen Pfad nicht finden. (0x3)
+[1216/180120.421:ERROR:file_io_win.cc(170)] CreateFile C:\Users\ADM-ML~1\AppData\Local\Temp\scoped_dir13928_30318\Crashpad\reports\a2b790d5-7acb-492a-9eee-1771973020e5.dmp: Das System kann den angegebenen Pfad nicht finden. (0x3)
+[1216/180120.421:ERROR:crash_report_exception_handler.cc(97)] PrepareNewCrashReport failed

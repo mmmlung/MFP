@@ -35,8 +35,8 @@ def collect_data_spkr(date_mode, online):
         web.click('Kontostand/Umsatzanzeige')
         web.type('01.01.2018', into='Zeitraum', clear=True)
         web.click('Export')
-        web.click('CSV-MT940 Format')
-        time.sleep(10)
+        web.click('CSV-MT940-Format')
+        time.sleep(5)
         web.click('Abmelden')
 
     data_csv_path = get_newest_download(PATH_DOWNLOADS)
@@ -46,16 +46,7 @@ def collect_data_spkr(date_mode, online):
     df.to_csv("C:/Users/adm-mlung/Desktop/Projekte/MFP/data/Umsatz_raw.csv")
     return df
 
-def append_data():
-    df = collect_data_spkr('full', online=True)
-    de = pd.read_csv("C:/Users/adm-mlung/Desktop/Projekte/MFP/data/Umsatz_tagged_categorized_09122018.csv")
- 
-    df.set_index(['Valutadatum', 'Verwendungszweck'], verify_integrity = True)
-    de.set_index(['Valutadatum', 'Verwendungszweck'], verify_integrity = True)
 
-    df.append(de, verify_integrity = True, ignore_index = True)
-
-    return de
 
 
 
