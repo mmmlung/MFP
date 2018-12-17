@@ -9,7 +9,7 @@ import rules_tags
 
 
 def append_data():
-    df = load_data.collect_data_spkr('full', online=True)
+#    df = load_data.collect_data_spkr('full', online=True)
     df = pd.read_csv('C:/Users/adm-mlung/Desktop/Projekte/MFP/data/Umsatz_raw.csv')
     de = pd.read_csv("C:/Users/adm-mlung/Desktop/Projekte/MFP/data/Umsatz_tagged_categorized_09122018.csv")
  
@@ -21,19 +21,20 @@ def append_data():
 
     dc = de.combine_first(df)
     dc['Tags'] = dc['Tags'].fillna(' ')
-    dc['Categories'] = dc['Categories'].fillna(' ')
+    dc['Category'] = dc['Category'].fillna(' ')
+
+    dc = dc.reset_index()
 
     dc.to_csv("C:/Users/adm-mlung/Desktop/Projekte/MFP/data/Updated_Umsatz_"+ str(time.strftime("%d%m%Y")) +".csv")
 
     return dc
 
 def tag_updated_data_rules(df):
-    dc = df[df['Tags'].str.isspace()] 
-    dc = dc.apply(rules_tags.rule_based_tagging, axis=1)
+    df.loc[(df.Tags.str.isspace()), 'Tags'] = df.loc[(df.Tags.str.isspace())].apply(rules_tags.rule_based_tagging, axis = 1)
     return df
 
 def categorize_updated_data_rules(df):
-    df['Category'] = df.apply(rules_categories.rule_based_categorizing, axis=1)
+    df.loc[(df.Category.str.isspace()), 'Category'] = df.loc[(df.Category.str.isspace())].apply(rules_categories.rule_based_categorizing, axis = 1)
     return df
 
 def tag_updated_data_ui(df):
