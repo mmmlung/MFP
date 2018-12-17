@@ -9,8 +9,7 @@ from webbot import Browser
 #import gspread
 #from oauth2client.service_account import ServiceAccountCredentials
 
-load_dotenv(
-    dotenv_path="C:/Users/adm-mlung/Desktop/Projekte/MFP/Secrets/secrets.env", verbose=True)
+load_dotenv(dotenv_path="C:/Users/adm-mlung/Desktop/Projekte/Secrets/secrets.env", verbose=True)
 Anmeldename = os.environ.get('Anmeldename')
 PIN = os.environ.get('Pin')
 PATH_DOWNLOADS = "C:/Users/adm-mlung/Downloads"
@@ -20,9 +19,6 @@ def get_newest_download(path):
     files = os.listdir(path)
     paths = [os.path.join(path, basename) for basename in files]
     return max(paths, key=os.path.getctime)
-
-
-
 
 def collect_data_spkr(date_mode, online):
 
@@ -45,29 +41,3 @@ def collect_data_spkr(date_mode, online):
     df.set_index(['Valutadatum', 'Verwendungszweck'])
     df.to_csv("C:/Users/adm-mlung/Desktop/Projekte/MFP/data/Umsatz_raw.csv")
     return df
-
-
-
-
-
-#df = collect_data_spkr('full', True)
-# print(df.head())
-
-#     Code-Schnipsel zum schreiben in Google Drive
-#     scope = ['https://spreadsheets.google.com/feeds','https://www.googleapis.com/auth/drive']
-#     credentials = ServiceAccountCredentials.from_json_keyfile_name("C:/Users/adm-mlung/Desktop/Projekte/Python-204bbd31dbcc.json", scope)
-
-#     gc = gspread.authorize(credentials)
-#     content = open("C:/Users/adm-mlung/Desktop/Umsatz.csv",'r').read()
-
-#     sheet = gc.create(title="Umsatz")
-#     gc.import_csv(sheet.id,data=content)
-
-#     sheet.share('mattlung05@googlemail.com', perm_type='user', role='writer')
-
-
-# Workflow/Features
-#    1. Analyse der Umsätze des letzten Jahres
-#    2. Wöchentlicher Report über Umsätze. Möglichst per Mail an mich
-#    3. Integration mit Budget-Tool
-#    4. Integration mit anderen Finanzportalen (KFW, Schwäbisch Hall)

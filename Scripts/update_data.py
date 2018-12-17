@@ -9,8 +9,8 @@ import rules_tags
 
 
 def append_data():
-#    df = load_data.collect_data_spkr('full', online=True)
-    df = pd.read_csv('C:/Users/adm-mlung/Desktop/Projekte/MFP/data/Umsatz_raw.csv')
+    df = load_data.collect_data_spkr('full', online=True)
+    #df = pd.read_csv('C:/Users/adm-mlung/Desktop/Projekte/MFP/data/Umsatz_raw.csv')
     de = pd.read_csv("C:/Users/adm-mlung/Desktop/Projekte/MFP/data/Umsatz_tagged_categorized_09122018.csv")
  
     df = clean_data.clean_data(df)

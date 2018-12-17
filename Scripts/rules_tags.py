@@ -263,34 +263,4 @@ def rule_based_tagging(row):
     if 'NANU-NANA' in row['Beguenstigter/Zahlungspflichtiger']:
         tags_collection += ' EinkaufenNanuNana'
 
-
-    # if 'GIROSOLUTION FUER PAYPAL' in row['Beguenstigter/Zahlungspflichtiger']:
-    #     tags_collection += ' PayPal'
-    # if 'GIROSOLUTION FUER PAYPAL' in row['Beguenstigter/Zahlungspflichtiger']:
-    #     tags_collection += ' PayPal'
-    # if 'GIROSOLUTION FUER PAYPAL' in row['Beguenstigter/Zahlungspflichtiger']:
-    #     tags_collection += ' PayPal'
-    # if 'GIROSOLUTION FUER PAYPAL' in row['Beguenstigter/Zahlungspflichtiger']:
-    #     tags_collection += ' PayPal'
-    # if 'GIROSOLUTION FUER PAYPAL' in row['Beguenstigter/Zahlungspflichtiger']:
-    #     tags_collection += ' PayPal'
-
-
-
-
-
-
-
-
-
-
-    # if '02.12.2018,20.01 UHR' in row['Verwendungszweck']:
-    #     tags_collection += ' AnzahlungMalleRadtour'
-    # if 'SVWZ+2018-11-30T16.54' in row['Verwendungszweck']:
-    #     tags_collection += ' HotelStuttgart'
-    # if '02.12.2018,20.01 UHR' in row['Verwendungszweck']:
-    #     tags_collection += ' AnzahlungMalleRadtour'
-    # if 'SVWZ+2018-11-30T16.54' in row['Verwendungszweck']:
-    #     tags_collection += ' HotelStuttgart'
-
     return tags_collection

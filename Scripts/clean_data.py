@@ -5,7 +5,7 @@ import rules_categories
 import pandas as pd
 
 
-def clean_data(dc):
+def clean_data(dc, date_from = '2018-03-29'):
     dc['Verwendungszweck'] = dc['Verwendungszweck'].fillna(' ')
     dc['Beguenstigter/Zahlungspflichtiger'] = dc['Beguenstigter/Zahlungspflichtiger'].fillna(
         ' ')
@@ -15,7 +15,7 @@ def clean_data(dc):
     dc['Betrag'] = pd.to_numeric(dc['Betrag'])
     dc['Buchungstag'] = pd.to_datetime(dc['Buchungstag'],dayfirst=True)
     dc['Valutadatum'] = pd.to_datetime(dc['Valutadatum'],dayfirst=True)
-    dc = dc[dc['Buchungstag']>'2018-03-29']
+    dc = dc[dc['Buchungstag']>date_from]
     return dc
 
 

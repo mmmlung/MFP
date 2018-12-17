@@ -196,24 +196,24 @@ def rule_based_categorizing(row):
 #             - Gehalt Keksi
 #             - Einzahlung
 #             - Sonstige
-    # - Ausgaben:(20)
-    #         - Miete
-    #         - Versicherungen
-    #         - Einkäufe(Haushalt)
-    #         - Einkäufe(Klamotten)
-    #         - Einkäufe(Sonstiges)
-    #         - Bargeldauszahlungen
-    #         - Tilgung&Zinsen
-    #         - Altervorsorge
-    #         - Telefon+Internet
-    #         - Sparen
-    #         - Reisen
-    #         - Ausgehen
-    #         - Medien (Bücher, Zeitungen, Streaming)
-    #         - Wohnnebenkosten
-    #         - PayPal
-    #         - Transport(ÖPNV,Parken)
-    #         - Gesundheit/Ärzte/Kliniken
-    #         - Kreditkarte
-    #         - Anderes
-    #         - Auto
+# - Ausgaben:(20)
+#             - Miete
+#             - Versicherungen
+#             - Einkäufe(Haushalt)
+#             - Einkäufe(Klamotten)
+#             - Einkäufe(Sonstiges)
+#             - Bargeldauszahlungen
+#             - Tilgung&Zinsen
+#             - Altervorsorge
+#             - Telefon+Internet
+#             - Sparen
+#             - Reisen
+#             - Ausgehen
+#             - Medien (Bücher, Zeitungen, Streaming)
+#             - Wohnnebenkosten
+#             - PayPal
+#             - Transport(ÖPNV,Parken)
+#             - Gesundheit/Ärzte/Kliniken
+#             - Kreditkarte
+#             - Anderes
+#             - Auto
