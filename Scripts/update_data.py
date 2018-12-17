@@ -6,11 +6,13 @@ import load_data
 import clean_data
 import rules_categories
 import rules_tags
+import tagger_ui
+import categorize_ui
 
 
 def append_data():
-    df = load_data.collect_data_spkr('full', online=True)
-    #df = pd.read_csv('C:/Users/adm-mlung/Desktop/Projekte/Secrets/data/Umsatz_raw.csv')
+    #df = load_data.collect_data_spkr('full', online=True)
+    df = pd.read_csv('C:/Users/adm-mlung/Desktop/Projekte/Secrets/data/Umsatz_raw.csv')
     de = pd.read_csv("C:/Users/adm-mlung/Desktop/Projekte/Secrets/data/Umsatz_tagged_categorized_09122018.csv")
  
     df = clean_data.clean_data(df)
@@ -38,7 +40,9 @@ def categorize_updated_data_rules(df):
     return df
 
 def tag_updated_data_ui(df):
-    pass
+    (dc, complete) = tagger_ui.tag_data(df)
+    return dc
 
-def tag_updated_data_ui(df):
-    pass
+def categorize_updated_data_ui(df):
+    (dc, complete) = categorize_ui.categorize_data(df)
+    return dc
