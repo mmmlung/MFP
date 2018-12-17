@@ -3,7 +3,7 @@ import time
 import pandas as pd
 
 #Lade durch Rules getaggte Umsätze:
-df = pd.read_csv('C:/Users/adm-mlung/Desktop/Projekte/MFP/data/Umsatz_clean.csv')
+df = pd.read_csv('C:/Users/adm-mlung/Desktop/Projekte/Secrets/data/Umsatz_clean.csv')
 df = df.drop(['Unnamed: 0'], axis=1)
 df['Category'] = df['Category'].fillna(' ')
 
@@ -29,6 +29,6 @@ for index, row in df[df['Tags'].str.isspace()].iterrows():
         aufhören = input()
         if aufhören == 'ja':
             break
-df.to_csv('C:/Users/adm-mlung/Desktop/Projekte/MFP/data/Update_Tag' + str(time.time())+ '.csv')
+df.to_csv('C:/Users/adm-mlung/Desktop/Projekte/Secrets/data/Update_Tag' + str(time.time())+ '.csv')
 
 print('Sehr fleißig ! Du hast alle Umsätze getaggt')

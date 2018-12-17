@@ -10,8 +10,8 @@ import rules_tags
 
 def append_data():
     df = load_data.collect_data_spkr('full', online=True)
-    #df = pd.read_csv('C:/Users/adm-mlung/Desktop/Projekte/MFP/data/Umsatz_raw.csv')
-    de = pd.read_csv("C:/Users/adm-mlung/Desktop/Projekte/MFP/data/Umsatz_tagged_categorized_09122018.csv")
+    #df = pd.read_csv('C:/Users/adm-mlung/Desktop/Projekte/Secrets/data/Umsatz_raw.csv')
+    de = pd.read_csv("C:/Users/adm-mlung/Desktop/Projekte/Secrets/data/Umsatz_tagged_categorized_09122018.csv")
  
     df = clean_data.clean_data(df)
     de = clean_data.clean_data(de) 
@@ -25,7 +25,7 @@ def append_data():
 
     dc = dc.reset_index()
 
-    dc.to_csv("C:/Users/adm-mlung/Desktop/Projekte/MFP/data/Updated_Umsatz_"+ str(time.strftime("%d%m%Y")) +".csv")
+    dc.to_csv("C:/Users/adm-mlung/Desktop/Projekte/Secrets/data/Updated_Umsatz_"+ str(time.strftime("%d%m%Y")) +".csv")
 
     return dc
 

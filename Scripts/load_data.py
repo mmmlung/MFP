@@ -39,5 +39,5 @@ def collect_data_spkr(date_mode, online):
     df = pd.read_csv(data_csv_path, error_bad_lines=False,
                      encoding='latin1', delimiter=';',  decimal=',')
     df.set_index(['Valutadatum', 'Verwendungszweck'])
-    df.to_csv("C:/Users/adm-mlung/Desktop/Projekte/MFP/data/Umsatz_raw.csv")
+    df.to_csv("C:/Users/adm-mlung/Desktop/Projekte/Secrets/data/Umsatz_raw.csv")
     return df
