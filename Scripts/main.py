@@ -19,7 +19,7 @@ def update():
     return df
 
 
-def init_data():
+def init():
     df = load_data.collect_data_spkr('full', True)
     print("Success load")
     dc = clean_data.clean_data(df)
