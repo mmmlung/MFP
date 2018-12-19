@@ -13,6 +13,6 @@ df = update_data.categorize_updated_data_rules(df)
 
 df = update_data.tag_updated_data_ui(df)
 
-#df = update_data.categorize_updated_data_ui(df)
+df = update_data.categorize_updated_data_ui(df)
 
 df.to_csv("C:/Users/adm-mlung/Desktop/Projekte/Secrets/data/Rules_Updated_Umsatz_"+ str(time.strftime("%d%m%Y")) +".csv")
