@@ -7,6 +7,8 @@ import update_data
 import visualize_data
 import create_reports
 
+import pandas as pd
+
 def update():
     df = update_data.append_data()
     df = update_data.tag_updated_data_rules(df)
@@ -37,15 +39,17 @@ def init():
 
 
 
-initialization = False
+# initialization = False
 
-if initialization:
-    df = init()
-else:
-    df = update()
+# if initialization:
+#     df = init()
+# else:
+#     df = update()
+
+df = pd.read_csv('C:/Users/adm-mlung/Desktop/Projekte/Secrets/data/Umsatz_complete/Umsatz_complete_19122018.csv')
     
-#visualize_data.visualize_categories_einnahmen(df)
-#visualize_data.visualize_categories_ausgaben(df)
+visualize_data.visualize_categories_einnahmen(df)
+visualize_data.visualize_categories_ausgaben(df)
 # visualize_data.visualize_tags(df)
 # visualize_data.visualize_fixed_variable(df)
 # visualize_data.visualize_miete(df)
