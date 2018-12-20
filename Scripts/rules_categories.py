@@ -7,8 +7,10 @@ def rule_based_categorizing(row):
         category = 'Einkäufe(Haushalt)'
     if 'Netto' in row['Tags']:
         category = 'Einkäufe(Haushalt)'
-    if 'Bargeldauszahlung' in row['Tags']:
+    if 'Bargeldauszahlung' in row['Tags'] and not 'umbuchung' in row['Verwendungszweck'].lower():
         category = 'Bargeldauszahlung'
+    if 'umbuchung' in row['Verwendungszweck'].lower():
+        category='Sparen'
     if 'Audible' in row['Tags']:
         category = 'Medien (Bücher, Zeitungen, Streaming)'
     if 'SWK' in row['Tags']:

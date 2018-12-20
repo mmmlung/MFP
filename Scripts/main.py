@@ -30,26 +30,33 @@ def init():
     print('Succsess tagging')
     de = clean_data.categorize_data(dd)
     print('Succes categorizing')
+    de = update_data.tag_updated_data_ui(de)
+    de = update_data.categorize_updated_data_ui(de)
+
+    de.to_csv('C:/Users/adm-mlung/Desktop/Projekte/Secrets/data/Umsatz_complete/Umsatz_init'+str(time.strftime("%d%m%Y")) +".csv")
 
     return de
 
 
 
 
+initialization = False
 
+if initialization:
+    df = init()
+else:
+    df = update()
 
-
-# initialization = False
-
-# if initialization:
-#     df = init()
-# else:
-#     df = update()
-
-df = pd.read_csv('C:/Users/adm-mlung/Desktop/Projekte/Secrets/data/Umsatz_complete/Umsatz_complete_19122018.csv')
+#df = pd.read_csv('C:/Users/adm-mlung/Desktop/Projekte/Secrets/data/Umsatz_complete/Umsatz_complete_19122018.csv')
     
 visualize_data.visualize_categories_einnahmen(df)
 visualize_data.visualize_categories_ausgaben(df)
+
+visualize_data.visualize_einnahmen_weekly(df)
+visualize_data.visualize_ausgaben_weekly(df)
+
+
+
 # visualize_data.visualize_tags(df)
 # visualize_data.visualize_fixed_variable(df)
 # visualize_data.visualize_miete(df)
