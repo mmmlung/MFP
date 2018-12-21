@@ -15,7 +15,7 @@ def append_data():
     # df = pd.read_csv('C:/Users/adm-mlung/Downloads/20181219-48503171-umsatz (1).csv',error_bad_lines=False,
     #                  encoding='latin1', delimiter=';',  decimal=',')
     baseline_path = load_data.get_newest_download('C:/Users/adm-mlung/Desktop/Projekte/Secrets/data/Umsatz_complete')
-    de = pd.read_csv("baseline_path")
+    de = pd.read_csv(baseline_path)
  
     df = clean_data.clean_data(df)
     de = clean_data.clean_data(de) 
