@@ -37,35 +37,35 @@ def init():
 
     return de
 
+def main():
+
+    initialization = False
+
+    if initialization:
+        df = init()
+    else:
+        df = update()
+        
+    visualize_data.visualize_categories_einnahmen(df)
+    visualize_data.visualize_categories_ausgaben(df)
+
+    visualize_data.visualize_einnahmen_weekly(df)
+    visualize_data.visualize_ausgaben_weekly(df)
 
 
 
-initialization = False
-
-if initialization:
-    df = init()
-else:
-    df = update()
-
-#df = pd.read_csv('C:/Users/adm-mlung/Desktop/Projekte/Secrets/data/Umsatz_complete/Umsatz_complete_19122018.csv')
-    
-visualize_data.visualize_categories_einnahmen(df)
-visualize_data.visualize_categories_ausgaben(df)
-
-visualize_data.visualize_einnahmen_weekly(df)
-visualize_data.visualize_ausgaben_weekly(df)
+    # visualize_data.visualize_tags(df)
+    # visualize_data.visualize_fixed_variable(df)
+    # visualize_data.visualize_miete(df)
+    # visualize_data.visualize_versicherungen(df)
+    # visualize_data.visualize_zinsen_tilgung(df)
+    # visualize_data.visualize_auto(df)
 
 
+    # create_reports.create_monthly_report(df, week = week)
+    # create_reports.create_weekly_report(df, month=month)
 
-# visualize_data.visualize_tags(df)
-# visualize_data.visualize_fixed_variable(df)
-# visualize_data.visualize_miete(df)
-# visualize_data.visualize_versicherungen(df)
-# visualize_data.visualize_zinsen_tilgung(df)
-# visualize_data.visualize_auto(df)
+    # pfm_dashboard.update_dashboard()
 
-
-# create_reports.create_monthly_report(df, week = week)
-# create_reports.create_weekly_report(df, month=month)
-
-# pfm_dashboard.update_dashboard()
+if __name__ == "__main__":
+    main()
