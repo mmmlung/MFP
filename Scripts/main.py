@@ -37,6 +37,14 @@ def init():
 
     return de
 
+def visualize(df):
+    visualize_data.visualize_categories_einnahmen(df)
+    visualize_data.visualize_categories_ausgaben(df)
+
+    visualize_data.visualize_einnahmen_weekly(df)
+    visualize_data.visualize_ausgaben_weekly(df)
+
+
 def main():
 
     initialization = False
@@ -45,12 +53,10 @@ def main():
         df = init()
     else:
         df = update()
-        
-    visualize_data.visualize_categories_einnahmen(df)
-    visualize_data.visualize_categories_ausgaben(df)
+    
+    visualize(df)
+    
 
-    visualize_data.visualize_einnahmen_weekly(df)
-    visualize_data.visualize_ausgaben_weekly(df)
 
 
 
