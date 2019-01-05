@@ -96,7 +96,7 @@ def create_budget_yaml_auto():
 
 def main():
     Start = pd.Timestamp(2019, 1, 1).normalize()
-    End = pd.Timestamp(2020, 1, 1).normalize()
+    End = pd.Timestamp(2019, 8, 1).normalize()
 
     create_budget_yaml_auto()
 
